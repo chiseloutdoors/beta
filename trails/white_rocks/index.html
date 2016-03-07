@@ -1,0 +1,546 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" ng-app="mainRouter">
+<head>
+
+	<title>Trails</title>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/png" href="../img/brand/cairn_grey.png"/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="trail.css"/>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../bower_components/bootstrap/js/transition.js"></script>
+	<script src="../bower_components/bootstrap/js/collapse.js"></script>
+  <script src="../js/d3.v3.min.js"></script>
+	
+  <!-- AJAX -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <!-- Javascript -->
+  <script src="trail.js"></script>
+
+  <!-- Base MasterSlider style sheet -->
+  <link rel="stylesheet" href="../masterslider/style/masterslider.css" />
+  <!-- MasterSlider default skin -->
+  <link rel="stylesheet" href="../masterslider/skins/default/style.css" />
+  <link rel="stylesheet" href="../masterslider/skins/black-1/style.css" />
+  <!-- Latest version of jQuery from Google CDN -->
+  <!-- You can remove it if jQuery is already included. -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <!-- MasterSlider main JS file -->
+  <script src="../masterslider/jquery.min.js"></script>
+  <script src="../masterslider/masterslider.min.js"></script>
+
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	
+
+	
+</head>
+<body>
+
+	<!--Site Navigation-->
+	<div id="nav">
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+        <img class="glyphicon pull-left" src="../img/brand/cairn_white.png" style="width:50px; height:50px; margin-left:5px;">
+				<a class="navbar-brand" href="http://www.chiseloutdoors.com/beta">Chisel</a>
+			</ul>
+			<a class="navbar-brand navbar-center" href="">Trail Name at Snow Canyon State Park</a>
+			<ul class="nav navbar-nav navbar-right">
+				<!-- <a class="navbar-brand" href="/register">Sign Up</a>
+				<a class="navbar-brand" href="/login">Login</a> -->
+			</ul>
+		</div>
+	</div>
+	<!--End Site Navigation-->
+
+
+  <!-- Forecast -->
+  <div class="forecast">
+    <h3 style="margin-left: 10px;display:inline-block;text-decoration:;">Today</h3>
+    <!-- close icon -->
+    <div class="icon-close" style="display:inline-block; position: absolute; right: 0px;">
+      <img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/close.png">
+    </div>
+    <ul>
+      
+      <li class="day" id="current">
+      	<img id="current_img" src="">
+      	<h3 class="avg" id="current_avg"></h3>
+      	<p class="description" id="current_conditions"></p>
+      </li>
+
+      <h3 style="margin-left:10px;text-decoration:;">5 Day Forecast</h3>
+      
+      <li class="day">
+      	<img id="icon0" src="">
+      	<h3 class="avg" id="avg0"></h3>
+        <h5 class="range" id="range0"></h5>
+      	<p class="description" id="desc0"></p>
+      </li>
+      
+      <li class="day">
+      	<img id="icon1" src="">
+      	<h3 class="avg" id="avg1"></h3>
+        <h5 class="range" id="range1"></h5>
+      	<p class="description" id="desc1"></p>
+      </li>
+      
+      <li class="day">
+      	<img id="icon2" src="">
+      	<h3 class="avg" id="avg2"></h3>
+        <h5 class="range" id="range2"></h5>
+      	<p class="description" id="desc2"></p>
+      </li>
+      
+      <li class="day">
+      	<img id="icon3" src="">
+      	<h3 class="avg" id="avg3"></h3>
+        <h5 class="range" id="range3"></h5>
+      	<p class="description" id="desc3"></p>
+      </li>
+      
+      <li class="day">
+      	<img id="icon4" src="">
+      	<h3 class="avg" id="avg4"></h3>
+        <h5 class="range" id="range4"></h5>
+      	<p class="description" id="desc4"></p>
+      </li>
+    </ul>
+    <h5>Temps in degrees fahrenheit</h5>
+  </div>
+  <!-- End Forecast -->
+
+
+	<!--Trail Map -->
+	<div class="section" id="trailMap">
+		<div id="trail_map_canvas" style="width:100%;height:100%;">
+		</div>
+	</div>
+	<!--End Map -->
+
+
+	<!--Trail Navigation-->
+	<div class="slider_bar" id="trailnav">
+		<ul>
+			<li>|</li>
+			<span title="Toggle photos"><li><img class="photos-btn" alt="photos-icon" src="../img/flaticon/png/photo147.png"></span></li>
+			<li>|</li>
+			<span title="Toggle Distance Calc"><li><img class="distance-btn" alt="distance-icon" src="../img/flaticon/png/map4.png"></li></span>
+			<li>|</li>
+			<span title="Forecast"><li><img class="forecast-btn" alt="forecast-icon" src="../img/flaticon/png/cloud310.png"></li></span>
+			<li>|</li>
+			<!-- Incorporate at later time....
+			<span title="Community Photos"><li><img class="community-btn" src="../img/flaticon/png/two361.png"></li></span>
+			<li>|</li>
+			-->
+		</ul>
+	</div>
+	<!--End Trail Navigation-->
+	
+
+	<!-- Trail Info -->
+	<div id="trailInfo" class="mini_section">
+		<div class="container-fluid">
+	      <div class="row">
+            <div class="col-md-3 " id="trail_desc">
+              <ul>
+                <li id="distance">Distance: 10.7 miles</li>
+                <li id="elevation gain">Elevation Gain: 1293 ft</li>
+                <li id="terrain">Terrain: Rocky and steep</li>
+                <li id="cell_signal">Cell Signal: Weak</li>
+                <li id="city">Near: Ivins, Utah</li>
+              </ul> 
+            </div>
+        	  <div class="col-md-2 " id="activities">
+            	<ul>
+            		<li>Hike</li>
+            		<li>Bike</li>
+            		<li>Equestrian</li>
+            		<li>Rock Climbing</li>
+            		<li>Pets</li>
+            		<li>RV</li>
+            	</ul> 
+          	</div>
+            <div class="col-md-3" id="quickInfo">
+              <p>Open: 6 a.m. to 10 p.m. daily</p>
+              <p>Day-use Fees: $6 per vehicle (up to eight people)</p>
+            </div>
+        	  <div class="col-md-3 " id="links">
+        	  	<ul>
+	        	    <li><a href="http://stateparks.utah.gov/parks/snow-canyon/">Snow Canyon State Park</a></li>
+				        <li><a href="http://stateparks.utah.gov/parks/snow-canyon/park-	fees/">Park Fees</a></li>
+				        <li><a href="http://utahstateparks.reserveamerica.com/camping/snow-canyon-state-park/r/campgroundDetails.do?contractCode=UT&parkId=345781">Reserve Camp/RV</a></li>
+				      </ul>
+    	      </div>
+      	</div>  
+		</div>
+	</div>
+	<!-- End Trail Info -->
+
+  
+  <!-- Trail Sponsor -->
+  <div class="mini_section">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1 style="display:inline-block;font-size:60px;font-weight:bold;">Sponsored by </h1>
+        <a href="http://www.dickssportinggoods.com/home/index.jsp?&camp=PPC:fyYeTD4X_dc:78266456725|e:dicks%20sporting%20goods"><img style="display:inline-block;" src="http://www.thesportshows.com/admin/wp-content/uploads/2015/01/dicks_sporting_goods.png"></a>
+      </div>
+    </div>
+  </div>
+  <!-- Trail Sponsor -->
+
+
+	<!-- NEW PREP MAP -->
+	<div class="section" id="prep_map">
+
+    	<!-- Slide Headline -->
+    	<div class="headline">
+    	  <h3 id="map_headline">Rec Shops</h3>
+    	</div>
+
+    	<!-- Slide Menu -->
+    	<div class="slide_menu" id="map_menu">
+    	  <ul>
+    	    <li id="place_name"></li>
+          <li><img id="place_pic" alt="place_pic" src=""></li>
+          <li id="place_adress"></li>
+          <li id="place_phone"></li>
+          <li id="place_hours"></li>
+          <li id="place_rating"></li>
+          <li><a href="" id="place_web">Directions</a></li>
+    	  </ul>
+    	</div>
+ 
+      <!-- Sponsor Slide -->
+        <div class="slide active-slide-map" id="sponsor_slide">
+        
+        </div>
+
+      	<!-- Rec Shop Slide -->
+      	<div class="slide" id="rec_shop_slide">
+        
+      	</div>
+
+      	<!-- Food Slide -->
+      	<div class="slide" id="food_slide">
+        	
+      	</div>
+
+      	<!-- Pubs Slide -->
+      	<div class="slide" id="pub_slide">
+        	
+      	</div>
+
+      	<!-- Accomodations Slide -->
+      	<div class="slide" id="accomodations_slide"> 
+        	
+      	</div>
+
+      	<!-- Park & Gas Slide -->
+      	<div class="slide" id="gas_slide">
+        	
+      	</div>
+
+		    <!-- Airport -->
+      	<div class="slide" id="airport_slide">
+        	
+      	</div>
+
+      	<!-- Camp and RVs -->
+      	<div class="slide" id="camp_slide">
+        	
+      	</div>
+
+      	<!-- Ammenities -->
+      	<div class="slide" id="amenities_slide">
+        	
+      	</div>
+	</div>
+	<!-- End New Prep Map -->
+
+
+	<!-- Prep Map Nav -->
+	<div class="slider_bar" id="prepMapnav">
+		<ul>
+			<li>|</li>
+			<span title="Recreation Shops"><li><img class="services-btn" alt="rec-shops-icon" src="../img/flaticon/png/bike30.png"></li></span>
+			<li>|</li>
+			<span title="Food"><li><img class="food-btn" alt="food-icon" src="../img/flaticon/png/hamburger14.png"></li></span>
+			<li>|</li>
+			<span title="Pubs"><li><img class="pubs-btn" alt="pub-icon" src="../img/flaticon/png/drink24.png"></li></span>
+			<li>|</li>
+			<span title="Accomodations"><li><img class="accomodations-btn" alt="accomodate-icon" src="../img/flaticon/png/stars10.png"></li></span>
+			<li>|</li>
+			<span title="Gas and Parking"><li><img class="transport-btn" alt="gas-icon" src="../img/flaticon/png/public-transport4.png"></li></span>
+			<li>|</li>
+			<span title="Airfare"><li><img class="airfare-btn" alt="airport-icon" src="../img/flaticon/png/sky8.png"></li></span>
+			<li>|</li>
+			<span title="Camp RV"><li><img class="camp-btn" alt="camp-icon" src="../img/flaticon/png/camping14.png"></li></span>
+			<li>|</li>
+			<span title="Amenities"><li><img class="amenities-btn" alt="amenities-icon" src="../img/flaticon/png/shower14.png"></li></span>
+			<li>|</li>
+		</ul>
+	</div>
+	<!-- End Prep Map Nav -->
+
+
+	<!-- Gear Prep-->
+	<div class="section" id="prep_gear">
+    
+    	<!-- Slide Headline -->
+    	<div class="headline">
+    	  <h3 id="gear_headline">Apparel</h3>
+    	</div>
+
+    	<!-- Slide Menu -->
+    	<div class="slide_menu" id="gear_menu">
+      		<h3>Shop at...</h3>
+      		<ul id="shop_list">
+        		<li id="rei"><a href="rei.com"><img src="../img/partners/rei-logo.png"></a></li>
+		        <li id="ajunky"><a href="activejunky.com"><img src="../img/partners/aj-logo.png"></a></li>
+        		<li id="bcountry"><a href="backcountry.com"><img src="../img/partners/bc-logo.png"></a></li>
+		        <li id="cabelas"><a href="cabelas.com"><img src="../img/partners/cab-logo.png"></a></li>
+        		<li id="bpro"><a href="basspro.com"><img src="../img/partners/bps-logo.png"></a></li>
+	      	</ul>
+    	</div>
+
+    	<!-- Clothes Slide -->
+		<div class="slide active-slide-gear" id="clothes-slide">
+    		<div class="container">
+    
+      		</div>
+	    </div>
+
+  		<!-- Equipment Slide -->
+  		<div class="slide" id="pack-slide">
+    		<div class="container">
+    			
+    		</div>
+  		</div>
+
+    	<!-- Sleep Slide -->
+    	<div class="slide" id="sleep-slide">
+    		<div class="container">
+    			
+    	  </div>
+    	</div>
+
+	    <!-- Food & Water Slide -->
+	    <div class="slide" id="food-slide">
+	    	<div class="container">
+	          
+	      </div>
+	    </div>
+
+    	<!-- Safety Slide -->
+    	<div class="slide" id="safety-slide">
+    		<div class="container">
+    	      
+    	  </div>
+    	</div>
+
+    	<!-- Play Slide -->
+    	<div class="slide" id="play-slide">
+    		<div class="container">
+    	  
+    	  </div>    
+    	</div>
+	</div>
+	<!--End Preperation Map-->
+	
+	<!--Preperation Map Navigation-->
+	<div class="slider_bar" id="prepGearnav">
+		<ul>
+			<li>|</li>
+			<span title="Clothes"><li><img class="clothes-btn" alt="clothes-icon" src="../img/flaticon/png/tshirt18.png"></li></span>
+			<li>|</li>
+			<span title="Pack"><li><img class="pack-btn" alt="pack-icon" src="../img/flaticon/png/traveler.png"></span>
+			<li>|</li>
+			<span title="Sleep"><li><img class="sleep-btn" alt="sleep-icon" src="../img/flaticon/png/sleeping.png"></span>
+			<li>|</li>
+			<span title="Food/Water"><li><img class="foodWater-btn" alt="provisions-icon" src="../img/flaticon/png/plate17.png"></span>
+			<li>|</li>
+			<span title="Safety"><li><img class="safety-btn" alt="safety-icon" src="../img/flaticon/png/hazard5.png"></span>
+			<li>|</li>
+			<span title="Play"><li><img class="play-btn" alt="play-icon" src="../img/flaticon/png/equipment5.png"></span>
+			<li>|</li>
+
+		</ul>
+	</div>
+	<!--End Preperation Map Navigation-->
+	
+
+	<!-- New TRAILS -->
+  	<!-- masterslider -->
+    <div class ="section" id="new_trails">
+        <div class="master-slider ms-skin-default" id="masterslider-new">
+ 
+        <!-- new slide -->
+        <div class="ms-slide slide-7" data-delay="6">
+          
+            <!-- slide background -->
+            <img src="masterslider/blank.gif" data-src="img/highlight_photos/Dixie.jpg" alt="Slide3 Background">    
+          
+          <a href="trail.html">
+            <h3 class="ms-layer hps-title1" style="color: white; left: 640px; top: 400px;" data-type="text" data-duration="1400" data-ease="easeOutExpo" data-effect="rotate3dtop(90,0,0,80)">
+            Dixie Rock
+            </h3>
+         
+            <h3 class="ms-layer hps-title2" style="color: white; left: 640px;top: 434px;" data-type="text" data-duration="1800" data-delay="140" data-ease="easeOutExpo" data-effect="bottom(40)">
+            St. George, Utah
+            </h3>
+         
+            <h3 class="ms-layer hps-title3" style="color: white; left: 640px;top: 468px;;" data-type="text" data-delay="1000" data-ease="easeOutExpo" data-duration="1230" data-effect="scale(1.5,1.6)">
+            .5 miles
+            </h3>
+          </a>
+
+        </div>
+        <!-- end of slide -->
+        <!-- new slide -->
+        <div class="ms-slide slide-7" data-delay="6">
+          
+            <!-- slide background -->
+            <img src="masterslider/blank.gif" data-src="img/highlight_photos/Veyo.jpg" alt="Slide3 Background">    
+          
+          <a href="trail.html">
+            <h3 class="ms-layer hps-title1" style="color: white; left: 1100px; top: 400px;" data-type="text" data-duration="1400" data-ease="easeOutExpo" data-effect="rotate3dtop(90,0,0,80)">
+            Veyo Creek
+            </h3>
+         
+            <h3 class="ms-layer hps-title2" style="color: white; left: 1100px;top: 434px;" data-type="text" data-duration="1800" data-delay="140" data-ease="easeOutExpo" data-effect="bottom(40)">
+            Veyo, Utah
+            </h3>
+         
+            <h3 class="ms-layer hps-title3" style="color: white; left: 1100px;top: 468px;" data-type="text" data-delay="1000" data-ease="easeOutExpo" data-duration="1230" data-effect="scale(1.5,1.6)">
+            1.2 miles
+            </h3>
+          </a>
+
+        </div>
+        <!-- end of slide -->
+        <!-- new slide -->
+        <div class="ms-slide slide-7" data-delay="6">
+          
+            <!-- slide background -->
+            <img src="masterslider/blank.gif" data-src="img/highlight_photos/Mesa.jpg" alt="Slide3 Background">    
+          
+          <a href="trail.html">
+            <h3 class="ms-layer hps-title1" style="color: white; left: 1000px; top: 50px;" data-type="text" data-duration="1400" data-ease="easeOutExpo" data-effect="rotate3dtop(90,0,0,80)">
+            Mesas
+            </h3>
+         
+            <h3 class="ms-layer hps-title2" style="color: white; left: 1000px;top: 84px;" data-type="text" data-duration="1800" data-delay="140" data-ease="easeOutExpo" data-effect="bottom(40)">
+            Somewhere in Arizona
+            </h3>
+         
+            <h3 class="ms-layer hps-title3" style="color: white; left: 1000px;top: 118px;" data-type="text" data-delay="1000" data-ease="easeOutExpo" data-duration="1230" data-effect="scale(1.5,1.6)">
+            5.4 miles
+            </h3>
+          </a>
+
+        </div>
+        <!-- end of slide -->
+        <div class="ms-slide slide-7" data-delay="6">
+          
+            <!-- slide background -->
+            <img src="masterslider/blank.gif" data-src="img/highlight_photos/Plains.jpg" alt="Slide3 Background">    
+         
+          <a href="trail.html">
+            <h3 class="ms-layer hps-title1" style="color: white; left: 1000px; top: 50px;" data-type="text" data-duration="1400" data-ease="easeOutExpo" data-effect="rotate3dtop(90,0,0,80)">
+            Plains
+            </h3>
+         
+            <h3 class="ms-layer hps-title2" style="color: white; left: 1000px;top: 84px;" data-type="text" data-duration="1800" data-delay="140" data-ease="easeOutExpo" data-effect="bottom(40)">
+            Somewhere in Colorado
+            </h3>
+         
+            <h3 class="ms-layer hps-title3" style="color: white; left: 1000px;top: 118px;" data-type="text" data-delay="1000" data-ease="easeOutExpo" data-duration="1230" data-effect="scale(1.5,1.6)">
+            15 miles
+            </h3>
+          </a>
+
+        </div>
+        <!-- end of slide -->
+        <div class="ms-slide slide-7" data-delay="6">
+          
+          <!-- slide background -->
+          <img src="masterslider/blank.gif" data-src="img/highlight_photos/Caves.jpg" alt="Slide3 Background">    
+          
+          <a href="trail.html">
+            <h3 class="ms-layer hps-title1" style="color: white; left: 1000px; top: 50px;" data-type="text" data-duration="1400" data-ease="easeOutExpo" data-effect="rotate3dtop(90,0,0,80)">
+            Caves of Snow Canyon
+            </h3>
+         
+            <h3 class="ms-layer hps-title2" style="color: white; left: 1000px;top: 84px;" data-type="text" data-duration="1800" data-delay="140" data-ease="easeOutExpo" data-effect="bottom(40)">
+            Ivins, Utah
+            </h3>
+         
+            <h3 class="ms-layer hps-title3" style="color: white; left: 1000px;top: 118px;" data-type="text" data-delay="1000" data-ease="easeOutExpo" data-duration="1230" data-effect="scale(1.5,1.6)">
+            .3 miles
+            </h3>
+          </a>
+
+        </div>
+        <!-- end of slide -->
+    </div>
+  	<!--End Nearby Trails-->
+
+	
+	<!--Footer-->
+  <div id="footer" class="footer">
+      <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Report an Issue</a></li>
+          <li><a href="#">Suggest a Trail</a></li>
+          <li><a href="#">Partner with Us</a></li>
+      </ul>
+      <h3>&copy; 2015 Chisel</h3>
+  </div>
+  <!--End Footer-->
+
+
+</body>
+
+  <!-- Set Trail Map -->
+  <script type="text/javascript">
+    function initMap();
+  </script>
+
+  <!-- Set Prep Map -->
+  <script type="text/javascript">
+    function setMap();
+  </script>
+	
+	<script type="text/javascript">     
+     var slider = new MasterSlider();
+   
+      // adds Arrows navigation control to the slider.
+      slider.control('arrows');
+      slider.control('timebar' , {insertTo:'#masterslider-new'});
+      slider.control('bullets');
+   
+       slider.setup('masterslider-new' , {
+           width:1400,    // slider standard width
+           height:580,   // slider standard height
+           space:1,
+           layout:'fullwidth',
+           loop:true,
+           preload:0,
+           autoplay:true
+      });
+  </script>
+	
+	<!-- Google Maps js API --> 
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9HruWNEZUBfdIyuBEehLKI0whMeX_bAQ&callback=initMap&signed_in=true&libraries=places,visualization" async defer></script>
+
+</html>

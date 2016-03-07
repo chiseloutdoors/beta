@@ -1,0 +1,813 @@
+{"trail":{
+    "name": "City Creek",
+    "trailhead": {"lat": 37.13479, "lng": -113.59747},
+    "distance": "2.7 miles",
+    "elevation": "473 ft",
+    "terrain": "Hard Dirt & Rock",
+    "signal": "Weak",
+    "city": "St. George",
+    "state": "Utah"
+    },
+
+"spheres":[],
+
+"cairns":[
+    {
+        "point": 1,
+        "lat": 37.13479,
+        "lon": -113.59747,
+        "elevation": "3107 ft"
+    },
+    {
+        "point": 2,
+        "lat": 37.13477,
+        "lon": -113.59748,
+        "elevation": "3094 ft"
+    },
+    {
+        "point": 3,
+        "lat": 37.1348,
+        "lon": -113.59752,
+        "elevation": "3101 ft"
+    },
+    {
+        "point": 4,
+        "lat": 37.13449,
+        "lon": -113.5977,
+        "elevation": "3104 ft"
+    },
+    {
+        "point": 5,
+        "lat": 37.13388,
+        "lon": -113.59816,
+        "elevation": "3090 ft"
+    },
+    {
+        "point": 6,
+        "lat": 37.13374,
+        "lon": -113.59827,
+        "elevation": "3091 ft"
+    },
+    {
+        "point": 7,
+        "lat": 37.13349,
+        "lon": -113.59848,
+        "elevation": "3096 ft"
+    },
+    {
+        "point": 8,
+        "lat": 37.13253,
+        "lon": -113.59852,
+        "elevation": "3085 ft"
+    },
+    {
+        "point": 9,
+        "lat": 37.13238,
+        "lon": -113.5986,
+        "elevation": "3085 ft"
+    },
+    {
+        "point": 10,
+        "lat": 37.13203,
+        "lon": -113.59871,
+        "elevation": "3091 ft"
+    },
+    {
+        "point": 11,
+        "lat": 37.1317,
+        "lon": -113.59859,
+        "elevation": "3102 ft"
+    },
+    {
+        "point": 12,
+        "lat": 37.13161,
+        "lon": -113.59867,
+        "elevation": "3109 ft"
+    },
+    {
+        "point": 13,
+        "lat": 37.1315,
+        "lon": -113.59874,
+        "elevation": "3115 ft"
+    },
+    {
+        "point": 14,
+        "lat": 37.13123,
+        "lon": -113.59889,
+        "elevation": "3123 ft"
+    },
+    {
+        "point": 15,
+        "lat": 37.13111,
+        "lon": -113.59888,
+        "elevation": "3135 ft"
+    },
+    {
+        "point": 16,
+        "lat": 37.13113,
+        "lon": -113.5989,
+        "elevation": "3132 ft"
+    },
+    {
+        "point": 17,
+        "lat": 37.13115,
+        "lon": -113.59885,
+        "elevation": "3118 ft"
+    },
+    {
+        "point": 18,
+        "lat": 37.13114,
+        "lon": -113.59875,
+        "elevation": "3123 ft"
+    },
+    {
+        "point": 19,
+        "lat": 37.13115,
+        "lon": -113.59884,
+        "elevation": "3131 ft"
+    },
+    {
+        "point": 20,
+        "lat": 37.13105,
+        "lon": -113.59834,
+        "elevation": "3135 ft"
+    },
+    {
+        "point": 21,
+        "lat": 37.13093,
+        "lon": -113.59783,
+        "elevation": "3121 ft"
+    },
+    {
+        "point": 22,
+        "lat": 37.13091,
+        "lon": -113.59762,
+        "elevation": "3109 ft"
+    },
+    {
+        "point": 23,
+        "lat": 37.13078,
+        "lon": -113.59684,
+        "elevation": "3093 ft"
+    },
+    {
+        "point": 24,
+        "lat": 37.13058,
+        "lon": -113.59574,
+        "elevation": "3077 ft"
+    },
+    {
+        "point": 25,
+        "lat": 37.13046,
+        "lon": -113.59556,
+        "elevation": "3072 ft"
+    },
+    {
+        "point": 26,
+        "lat": 37.13035,
+        "lon": -113.59535,
+        "elevation": "3069 ft"
+    },
+    {
+        "point": 27,
+        "lat": 37.13045,
+        "lon": -113.5946,
+        "elevation": "3057 ft"
+    },
+    {
+        "point": 28,
+        "lat": 37.1304,
+        "lon": -113.59399,
+        "elevation": "3046 ft"
+    },
+    {
+        "point": 29,
+        "lat": 37.13041,
+        "lon": -113.59351,
+        "elevation": "3041 ft"
+    },
+    {
+        "point": 30,
+        "lat": 37.13124,
+        "lon": -113.59273,
+        "elevation": "3031 ft"
+    },
+    {
+        "point": 31,
+        "lat": 37.13132,
+        "lon": -113.59272,
+        "elevation": "3031 ft"
+    },
+    {
+        "point": 32,
+        "lat": 37.13115,
+        "lon": -113.59241,
+        "elevation": "3020 ft"
+    },
+    {
+        "point": 33,
+        "lat": 37.13095,
+        "lon": -113.59234,
+        "elevation": "3017 ft"
+    },
+    {
+        "point": 34,
+        "lat": 37.13027,
+        "lon": -113.59192,
+        "elevation": "3041 ft"
+    },
+    {
+        "point": 35,
+        "lat": 37.13025,
+        "lon": -113.59189,
+        "elevation": "3006 ft"
+    },
+    {
+        "point": 36,
+        "lat": 37.13027,
+        "lon": -113.59194,
+        "elevation": "3009 ft"
+    },
+    {
+        "point": 37,
+        "lat": 37.13026,
+        "lon": -113.59194,
+        "elevation": "3031 ft"
+    },
+    {
+        "point": 38,
+        "lat": 37.13017,
+        "lon": -113.59172,
+        "elevation": "3028 ft"
+    },
+    {
+        "point": 39,
+        "lat": 37.13019,
+        "lon": -113.59149,
+        "elevation": "3025 ft"
+    },
+    {
+        "point": 40,
+        "lat": 37.13042,
+        "lon": -113.59138,
+        "elevation": "3038 ft"
+    },
+    {
+        "point": 41,
+        "lat": 37.13055,
+        "lon": -113.5913,
+        "elevation": "3044 ft"
+    },
+    {
+        "point": 42,
+        "lat": 37.13065,
+        "lon": -113.59116,
+        "elevation": "3046 ft"
+    },
+    {
+        "point": 43,
+        "lat": 37.13109,
+        "lon": -113.59077,
+        "elevation": "3058 ft"
+    },
+    {
+        "point": 44,
+        "lat": 37.1314,
+        "lon": -113.59067,
+        "elevation": "3071 ft"
+    },
+    {
+        "point": 45,
+        "lat": 37.13165,
+        "lon": -113.59063,
+        "elevation": "3083 ft"
+    },
+    {
+        "point": 46,
+        "lat": 37.13178,
+        "lon": -113.5906,
+        "elevation": "3088 ft"
+    },
+    {
+        "point": 47,
+        "lat": 37.13189,
+        "lon": -113.5905,
+        "elevation": "3088 ft"
+    },
+    {
+        "point": 48,
+        "lat": 37.13184,
+        "lon": -113.59002,
+        "elevation": "3083 ft"
+    },
+    {
+        "point": 49,
+        "lat": 37.13159,
+        "lon": -113.58962,
+        "elevation": "3077 ft"
+    },
+    {
+        "point": 50,
+        "lat": 37.13184,
+        "lon": -113.58888,
+        "elevation": "3088 ft"
+    },
+    {
+        "point": 51,
+        "lat": 37.13235,
+        "lon": -113.58865,
+        "elevation": "3104 ft"
+    },
+    {
+        "point": 52,
+        "lat": 37.13275,
+        "lon": -113.58866,
+        "elevation": "3117 ft"
+    },
+    {
+        "point": 53,
+        "lat": 37.13306,
+        "lon": -113.58832,
+        "elevation": "3128 ft"
+    },
+    {
+        "point": 54,
+        "lat": 37.13284,
+        "lon": -113.5877,
+        "elevation": "3112 ft"
+    },
+    {
+        "point": 55,
+        "lat": 37.13241,
+        "lon": -113.58735,
+        "elevation": "3102 ft"
+    },
+    {
+        "point": 56,
+        "lat": 37.13236,
+        "lon": -113.58724,
+        "elevation": "3088 ft"
+    },
+    {
+        "point": 57,
+        "lat": 37.13236,
+        "lon": -113.58725,
+        "elevation": "3093 ft"
+    },
+    {
+        "point": 58,
+        "lat": 37.13243,
+        "lon": -113.5872,
+        "elevation": "3094 ft"
+    },
+    {
+        "point": 59,
+        "lat": 37.13257,
+        "lon": -113.58676,
+        "elevation": "3076 ft"
+    },
+    {
+        "point": 60,
+        "lat": 37.13249,
+        "lon": -113.58663,
+        "elevation": "3065 ft"
+    },
+    {
+        "point": 61,
+        "lat": 37.13249,
+        "lon": -113.58684,
+        "elevation": "3050 ft"
+    },
+    {
+        "point": 62,
+        "lat": 37.13241,
+        "lon": -113.58679,
+        "elevation": "3036 ft"
+    },
+    {
+        "point": 63,
+        "lat": 37.13226,
+        "lon": -113.58683,
+        "elevation": "3038 ft"
+    },
+    {
+        "point": 64,
+        "lat": 37.13201,
+        "lon": -113.58702,
+        "elevation": "3041 ft"
+    },
+    {
+        "point": 65,
+        "lat": 37.13187,
+        "lon": -113.58714,
+        "elevation": "3046 ft"
+    },
+    {
+        "point": 66,
+        "lat": 37.13162,
+        "lon": -113.58745,
+        "elevation": "3057 ft"
+    },
+    {
+        "point": 67,
+        "lat": 37.13155,
+        "lon": -113.58771,
+        "elevation": "3066 ft"
+    },
+    {
+        "point": 68,
+        "lat": 37.13149,
+        "lon": -113.58797,
+        "elevation": "3052 ft"
+    },
+    {
+        "point": 69,
+        "lat": 37.13147,
+        "lon": -113.58805,
+        "elevation": "3052 ft"
+    },
+    {
+        "point": 70,
+        "lat": 37.13132,
+        "lon": -113.58844,
+        "elevation": "3060 ft"
+    },
+    {
+        "point": 71,
+        "lat": 37.13107,
+        "lon": -113.58885,
+        "elevation": "3046 ft"
+    },
+    {
+        "point": 72,
+        "lat": 37.13111,
+        "lon": -113.5887,
+        "elevation": "3044 ft"
+    },
+    {
+        "point": 73,
+        "lat": 37.13114,
+        "lon": -113.58834,
+        "elevation": "3039 ft"
+    },
+    {
+        "point": 74,
+        "lat": 37.13101,
+        "lon": -113.58829,
+        "elevation": "3038 ft"
+    },
+    {
+        "point": 75,
+        "lat": 37.13099,
+        "lon": -113.58842,
+        "elevation": "3049 ft"
+    },
+    {
+        "point": 76,
+        "lat": 37.13082,
+        "lon": -113.58866,
+        "elevation": "3060 ft"
+    },
+    {
+        "point": 77,
+        "lat": 37.13081,
+        "lon": -113.58862,
+        "elevation": "3071 ft"
+    },
+    {
+        "point": 78,
+        "lat": 37.13084,
+        "lon": -113.58864,
+        "elevation": "3071 ft"
+    },
+    {
+        "point": 79,
+        "lat": 37.13078,
+        "lon": -113.58865,
+        "elevation": "3060 ft"
+    },
+    {
+        "point": 80,
+        "lat": 37.1306,
+        "lon": -113.58864,
+        "elevation": "3049 ft"
+    },
+    {
+        "point": 81,
+        "lat": 37.13037,
+        "lon": -113.5887,
+        "elevation": "3035 ft"
+    },
+    {
+        "point": 82,
+        "lat": 37.13032,
+        "lon": -113.58894,
+        "elevation": "3031 ft"
+    },
+    {
+        "point": 83,
+        "lat": 37.13007,
+        "lon": -113.58974,
+        "elevation": "3036 ft"
+    },
+    {
+        "point": 84,
+        "lat": 37.12976,
+        "lon": -113.58971,
+        "elevation": "3047 ft"
+    },
+    {
+        "point": 85,
+        "lat": 37.13016,
+        "lon": -113.58825,
+        "elevation": "3058 ft"
+    },
+    {
+        "point": 86,
+        "lat": 37.13025,
+        "lon": -113.58781,
+        "elevation": "3071 ft"
+    },
+    {
+        "point": 87,
+        "lat": 37.13037,
+        "lon": -113.58743,
+        "elevation": "3076 ft"
+    },
+    {
+        "point": 88,
+        "lat": 37.1303,
+        "lon": -113.58711,
+        "elevation": "3087 ft"
+    },
+    {
+        "point": 89,
+        "lat": 37.13017,
+        "lon": -113.58695,
+        "elevation": "3094 ft"
+    },
+    {
+        "point": 90,
+        "lat": 37.12997,
+        "lon": -113.58699,
+        "elevation": "3109 ft"
+    },
+    {
+        "point": 91,
+        "lat": 37.1298,
+        "lon": -113.5872,
+        "elevation": "3123 ft"
+    },
+    {
+        "point": 92,
+        "lat": 37.12959,
+        "lon": -113.58768,
+        "elevation": "3135 ft"
+    },
+    {
+        "point": 93,
+        "lat": 37.1295,
+        "lon": -113.58787,
+        "elevation": "3143 ft"
+    },
+    {
+        "point": 94,
+        "lat": 37.1293,
+        "lon": -113.58808,
+        "elevation": "3146 ft"
+    },
+    {
+        "point": 95,
+        "lat": 37.12905,
+        "lon": -113.58838,
+        "elevation": "3159 ft"
+    },
+    {
+        "point": 96,
+        "lat": 37.12868,
+        "lon": -113.58855,
+        "elevation": "3170 ft"
+    },
+    {
+        "point": 97,
+        "lat": 37.12855,
+        "lon": -113.58865,
+        "elevation": "3184 ft"
+    },
+    {
+        "point": 98,
+        "lat": 37.12843,
+        "lon": -113.58875,
+        "elevation": "3194 ft"
+    },
+    {
+        "point": 99,
+        "lat": 37.12827,
+        "lon": -113.58905,
+        "elevation": "3199 ft"
+    },
+    {
+        "point": 100,
+        "lat": 37.12823,
+        "lon": -113.58906,
+        "elevation": "3205 ft"
+    },
+    {
+        "point": 101,
+        "lat": 37.12777,
+        "lon": -113.58904,
+        "elevation": "3213 ft"
+    },
+    {
+        "point": 102,
+        "lat": 37.12719,
+        "lon": -113.58883,
+        "elevation": "3224 ft"
+    },
+    {
+        "point": 103,
+        "lat": 37.12709,
+        "lon": -113.58888,
+        "elevation": "3216 ft"
+    },
+    {
+        "point": 104,
+        "lat": 37.12719,
+        "lon": -113.58888,
+        "elevation": "3227 ft"
+    },
+    {
+        "point": 105,
+        "lat": 37.12719,
+        "lon": -113.58887,
+        "elevation": "3225 ft"
+    },
+    {
+        "point": 106,
+        "lat": 37.12717,
+        "lon": -113.58879,
+        "elevation": "3224 ft"
+    },
+    {
+        "point": 107,
+        "lat": 37.12727,
+        "lon": -113.58855,
+        "elevation": "3230 ft"
+    },
+    {
+        "point": 108,
+        "lat": 37.12719,
+        "lon": -113.58843,
+        "elevation": "3227 ft"
+    },
+    {
+        "point": 109,
+        "lat": 37.12661,
+        "lon": -113.58759,
+        "elevation": "3229 ft"
+    },
+    {
+        "point": 110,
+        "lat": 37.12651,
+        "lon": -113.58717,
+        "elevation": "3224 ft"
+    },
+    {
+        "point": 111,
+        "lat": 37.12645,
+        "lon": -113.58698,
+        "elevation": "3222 ft"
+    },
+    {
+        "point": 112,
+        "lat": 37.12618,
+        "lon": -113.58673,
+        "elevation": "3222 ft"
+    },
+    {
+        "point": 113,
+        "lat": 37.12553,
+        "lon": -113.58623,
+        "elevation": "3233 ft"
+    },
+    {
+        "point": 114,
+        "lat": 37.12542,
+        "lon": -113.58613,
+        "elevation": "3235 ft"
+    },
+    {
+        "point": 115,
+        "lat": 37.12523,
+        "lon": -113.58613,
+        "elevation": "3249 ft"
+    },
+    {
+        "point": 116,
+        "lat": 37.12518,
+        "lon": -113.58612,
+        "elevation": "3247 ft"
+    },
+    {
+        "point": 117,
+        "lat": 37.12463,
+        "lon": -113.58604,
+        "elevation": "3254 ft"
+    },
+    {
+        "point": 118,
+        "lat": 37.12349,
+        "lon": -113.58641,
+        "elevation": "3263 ft"
+    },
+    {
+        "point": 119,
+        "lat": 37.12341,
+        "lon": -113.58646,
+        "elevation": "3263 ft"
+    },
+    {
+        "point": 120,
+        "lat": 37.12318,
+        "lon": -113.58659,
+        "elevation": "3271 ft"
+    },
+    {
+        "point": 121,
+        "lat": 37.12314,
+        "lon": -113.58659,
+        "elevation": "3271 ft"
+    },
+    {
+        "point": 122,
+        "lat": 37.12275,
+        "lon": -113.58663,
+        "elevation": "3276 ft"
+    },
+    {
+        "point": 123,
+        "lat": 37.12234,
+        "lon": -113.58698,
+        "elevation": "3265 ft"
+    },
+    {
+        "point": 124,
+        "lat": 37.12193,
+        "lon": -113.5874,
+        "elevation": "3276 ft"
+    },
+    {
+        "point": 125,
+        "lat": 37.12191,
+        "lon": -113.58746,
+        "elevation": "3282 ft"
+    },
+    {
+        "point": 126,
+        "lat": 37.12151,
+        "lon": -113.58862,
+        "elevation": "3276 ft"
+    },
+    {
+        "point": 127,
+        "lat": 37.12134,
+        "lon": -113.58856,
+        "elevation": "3260 ft"
+    },
+    {
+        "point": 128,
+        "lat": 37.12102,
+        "lon": -113.58861,
+        "elevation": "3246 ft"
+    },
+    {
+        "point": 129,
+        "lat": 37.12096,
+        "lon": -113.58862,
+        "elevation": "3246 ft"
+    },
+    {
+        "point": 130,
+        "lat": 37.12075,
+        "lon": -113.58867,
+        "elevation": "3235 ft"
+    },
+    {
+        "point": 131,
+        "lat": 37.12065,
+        "lon": -113.58872,
+        "elevation": "3230 ft"
+    },
+    {
+        "point": 132,
+        "lat": 37.12014,
+        "lon": -113.5887,
+        "elevation": "3216 ft"
+    },
+    {
+        "point": 133,
+        "lat": 37.1201,
+        "lon": -113.58869,
+        "elevation": "3221 ft"
+    }
+]}

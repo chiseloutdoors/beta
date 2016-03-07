@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" ng-app="mainRouter">
+<head>
+  <title>Chisel Outdoors - 360 Photos so you can plan your next outdoor recreation adventure.</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script language="javascript">
+	    if (typeof(UserAgentInfo) != 'undefined' && !window.addEventListener) {
+	        UserAgentInfo.strBrowser=1;
+	    }
+	</script>
+	<style>
+		body {
+			overflow-x:hidden;
+		}
+	</style>
+	<title>Chisel</title>
+	<link rel="shortcut icon" type="image/png" href="img/brand/cairn_grey.png"/>
+
+	<!-- Bootstrap -->
+	<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/bootstrap/js/transition.js"></script>
+  <script src="bower_components/bootstrap/js/collapse.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  
+  <!-- Javascript -->
+  <script src="js/d3.v3.min.js"></script>
+
+  <!-- Link to CSS -->
+	<link rel="stylesheet" type="text/css" href="home/index_style.css"/>
+	
+  <!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+  <!-- Base MasterSlider style sheet -->
+  <link rel="stylesheet" href="masterslider/style/masterslider.css" />
+  <!-- MasterSlider default skin -->
+  <link rel="stylesheet" href="masterslider/skins/default/style.css" />
+  <link rel="stylesheet" href="masterslider/skins/black-1/style.css" />
+  <!-- Latest version of jQuery from Google CDN -->
+  <!-- You can remove it if jQuery is already included. -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <!-- MasterSlider main JS file -->
+  <script src="masterslider/jquery.min.js"></script>
+  <script src="masterslider/masterslider.min.js"></script>
+
+
+</head>
+
+
+<!-- BODY -->
+<body>
+
+  <!-- Site Header -->
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background:rgba(51, 51, 51, 0.4);">
+	<div class="navbar-background">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<img class="glyphicon pull-left" src="http://chiseloutdoors.com/beta/img/brand/cairn_white.png" style="width:50px; height:50px; margin-left:20px;">
+      <!--<i class="glyphicon glyphicon-tree-conifer pull-left" style="color:#fff;font-size:35px;margin-left:20px;margin-top:8px;"></i>-->
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+				<span class="icon-bar"></span> <span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#" style="color:#fff;">Chisel</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav"></ul>
+			<ul class="nav navbar-nav navbar-right" style="margin-right:20px;">
+				<!-- <a class="navbar-brand" href="/register">Sign Up</a>
+				<a class="navbar-brand" href="/login">Login</a> -->
+			</ul>
+		</div>
+	</div>
+  </nav>
+  <!-- End Site Header -->
+	
+
+  <!-- Welcome container -->
+  <div class="welcome">
+  	<div class="container" id="">
+  		<p id="welcome_text">Be there, prep, go there</p>
+      <a href="http://www.chiseloutdoors.com/beta/search/" class="btn btn-default" role="button">Search for Adventure</a>
+
+  	</div>
+  </div>
+  <!-- End Welcome container -->
+
+  <!-- SnapWidget -->
+  <div id="insta_feed">
+    <iframe id="snap_widget" src="http://snapwidget.com/sc/?u=Y2hpc2Vsb3V0ZG9vcnN8aW58MTUwfDN8M3x8bm98NXxub25lfG9uU3RhcnR8eWVzfG5v&ve=101215" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:150px"></iframe>
+    <a href="https://www.instagram.com/chiseloutdoors/?ref=badge" style=""><img src="img/social/Follow-us-on-Instagram-PNG-03047.png"></a>
+    
+  </div>
+  <!-- End SnapWidget -->
+
+
+  <!-- Intro Vid -->
+  <div id="intro_vid">
+    <!-- masterslider -->
+    <div class="master-slider ms-skin-default" id="masterslider-video">
+      <!-- new slide -->
+      <div class="ms-slide" data-fill-mode="fit" data-delay="5">
+         
+        <!-- slide background -->
+        <img src="masterslider/blank.gif" data-src="masterslider/images/1.jpg" alt="lorem ipsum dolor sit"/>     
+         <a href="http://player.vimeo.com/video/154515149" data-type="video">Chisel</a>
+        <!-- slide background video -->
+        <video data-autopause="false" data-mute="true" data-loop="true" data-fill-mode="fill">
+            <source id="mp4" src="video/Welcome_to_Chisel.mp4" type="video/mp4"/>
+        </video>
+      </div>
+      <!-- end of slide -->                    
+    </div>
+    <!-- end of masterslider -->
+  </div>
+  <!-- End Intro Vid -->
+
+
+  <!-- Community -->
+  <section class="community space-4 hide-sm">
+
+    <div class="container-fluid">
+      <div class="row">
+        <a href="http://chiseloutdoors.com/beta/get_started/">
+          <div class="col-md-3" id="start">
+            <h2>Get Started</h2>
+            <p>New to outdoor rec?</p>
+          </div>
+        </a>
+        <a href="http://chiseloutdoors.com/beta/community/">
+          <div class="col-md-3 col-md-offset-1" id="family">
+            <h2>Community</h2>
+            <p>Connect, share, learn.</p>
+          </div>
+        </a>
+        <a href="#">          
+          <div class="col-md-3 col-md-offset-1" id="team">
+            <h2>The Team</h2>
+            <p>Meet the people who make Chisel run.</p>  
+          </div>
+        </a>
+
+      </div>  
+    </div>
+
+  </section>
+  <!-- End Community -->
+
+<!-- New TRAILS -->
+  <!-- masterslider -->
+    <div id="new_trails">
+        <div class="master-slider ms-skin-default" id="masterslider-new">
+ 
+        <!-- new slide -->
+        <div class="ms-slide slide-7" id="new_1" data-delay="6">
+          
+            <!-- slide background -->
+            <img src="masterslider/blank.gif" id="new_1_img" data-src="http://chiseloutdoors.com/beta/trails/cinder_cone/cinder_cone.jpg" alt="Slide3 Background">    
+          
+          <a href="http://chiseloutdoors.com/beta/trails/cinder_cone/">
+            <h3 class="ms-layer hps-title1" id="new_1_name" style="color: white; left: 640px; top: 400px;" data-type="text" data-duration="1400" data-ease="easeOutExpo" data-effect="rotate3dtop(90,0,0,80)">
+            Cinder Cone
+            </h3>
+         
+            <h3 class="ms-layer hps-title2" id="new_1_city" style="color: white; left: 640px;top: 434px;" data-type="text" data-duration="1800" data-delay="140" data-ease="easeOutExpo" data-effect="bottom(40)">
+            Diamond Valley, Utah
+            </h3>
+         
+            <h3 class="ms-layer hps-title3" id="new_1_distance" style="color: white; left: 640px;top: 468px;;" data-type="text" data-delay="1000" data-ease="easeOutExpo" data-duration="1230" data-effect="scale(1.5,1.6)">
+            1.4 miles
+            </h3>
+          </a>
+
+        </div>
+        <!-- end of slide -->
+        <!-- new slide -->
+        <div class="ms-slide slide-7" id="new_2" data-delay="6">
+          
+            <!-- slide background -->
+            <img src="masterslider/blank.gif" id="new_2_img" data-src="http://chiseloutdoors.com/beta/trails/city_creek/city_creek.jpg" alt="Slide3 Background">    
+          
+          <a href="http://chiseloutdoors.com/beta/trails/city_creek/">
+            <h3 class="ms-layer hps-title1" id="new_2_name" style="color: white; left: 1100px; top: 400px;" data-type="text" data-duration="1400" data-ease="easeOutExpo" data-effect="rotate3dtop(90,0,0,80)">
+            City Creek
+            </h3>
+         
+            <h3 class="ms-layer hps-title2" id="new_2_city" style="color: white; left: 1100px;top: 434px;" data-type="text" data-duration="1800" data-delay="140" data-ease="easeOutExpo" data-effect="bottom(40)">
+            St. George, Utah
+            </h3>
+         
+            <h3 class="ms-layer hps-title3" id="new_2_distance" style="color: white; left: 1100px;top: 468px;" data-type="text" data-delay="1000" data-ease="easeOutExpo" data-duration="1230" data-effect="scale(1.5,1.6)">
+            3 miles
+            </h3>
+          </a>
+
+        </div>
+        <!-- end of slide -->
+        <!-- new slide -->
+        <div class="ms-slide slide-7" id="new_3" data-delay="6">
+          
+            <!-- slide background -->
+            <img src="masterslider/blank.gif" id="new_3_img" data-src="http://chiseloutdoors.com/beta/trails/gila/gila.jpg" alt="Slide3 Background">    
+          
+          <a href="http://chiseloutdoors.com/beta/trails/gila/">
+            <h3 class="ms-layer hps-title1" id="new_3_name" style="color: white; left: 1000px; top: 50px;" data-type="text" data-duration="1400" data-ease="easeOutExpo" data-effect="rotate3dtop(90,0,0,80)">
+            Gila Trail, Snow Canyon SP
+            </h3>
+         
+            <h3 class="ms-layer hps-title2" id="new_3_city" style="color: white; left: 1000px;top: 84px;" data-type="text" data-duration="1800" data-delay="140" data-ease="easeOutExpo" data-effect="bottom(40)">
+            Ivins, Utah
+            </h3>
+         
+            <h3 class="ms-layer hps-title3" id="new_3_distance" style="color: white; left: 1000px;top: 118px;" data-type="text" data-delay="1000" data-ease="easeOutExpo" data-duration="1230" data-effect="scale(1.5,1.6)">
+            1.5 miles
+            </h3>
+          </a>
+
+        </div>
+        <!-- end of slide -->
+        <div class="ms-slide slide-7" id="new_4" data-delay="6">
+          
+            <!-- slide background -->
+            <img src="masterslider/blank.gif" id="new_4_img" data-src="http://chiseloutdoors.com/beta/trails/t-bone/t-bone.jpg" alt="Slide3 Background">    
+         
+          <a href="http://chiseloutdoors.com/beta/trails/t-bone/">
+            <h3 class="ms-layer hps-title1" id="new_4_name" style="color: white; left: 1000px; top: 50px;" data-type="text" data-duration="1400" data-ease="easeOutExpo" data-effect="rotate3dtop(90,0,0,80)">
+            T-Bone Trail
+            </h3>
+         
+            <h3 class="ms-layer hps-title2" id="new_4_city" style="color: white; left: 1000px;top: 84px;" data-type="text" data-duration="1800" data-delay="140" data-ease="easeOutExpo" data-effect="bottom(40)">
+            St. George, Utah
+            </h3>
+         
+            <h3 class="ms-layer hps-title3" id="new_4_distance" style="color: white; left: 1000px;top: 118px;" data-type="text" data-delay="1000" data-ease="easeOutExpo" data-duration="1230" data-effect="scale(1.5,1.6)">
+            1.9 miles
+            </h3>
+          </a>
+
+        </div>
+        <!-- end of slide -->
+        <div class="ms-slide slide-7" id="new_5" data-delay="6">
+          
+          <!-- slide background -->
+          <img src="masterslider/blank.gif" id="new_5_img" data-src="http://chiseloutdoors.com/beta/trails/white_rocks/white_rocks.jpg" alt="Slide3 Background">    
+          
+          <a href="http://chiseloutdoors.com/beta/trails/white_rocks/">
+            <h3 class="ms-layer hps-title1" id="new_5_name" style="color: white; left: 1000px; top: 50px;" data-type="text" data-duration="1400" data-ease="easeOutExpo" data-effect="rotate3dtop(90,0,0,80)">
+            White Rocks Trail in Snow Canyon SP
+            </h3>
+         
+            <h3 class="ms-layer hps-title2" id="new_5_city" style="color: white; left: 1000px;top: 84px;" data-type="text" data-duration="1800" data-delay="140" data-ease="easeOutExpo" data-effect="bottom(40)">
+            Ivins, Utah
+            </h3>
+         
+            <h3 class="ms-layer hps-title3" id="new_5_distance" style="color: white; left: 1000px;top: 118px;" data-type="text" data-delay="1000" data-ease="easeOutExpo" data-duration="1230" data-effect="scale(1.5,1.6)">
+            1.3 miles
+            </h3>
+          </a>
+
+        </div>
+        <!-- end of slide -->
+    </div>
+  <!--End New Trails-->
+
+  <!--Footer-->
+    <div id="footer" class="footer">
+        <ul>
+            <li><a href="#">Company</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        <h3>&copy; 2015 Chisel</h3>
+    </div>
+    <!--End Footer-->
+
+</body>
+
+  <script type="text/javascript">     
+     var slider = new MasterSlider();
+   
+      // adds Arrows navigation control to the slider.
+      slider.control('arrows');
+      slider.control('timebar' , {insertTo:'#masterslider-new'});
+      slider.control('bullets');
+   
+       slider.setup('masterslider-new' , {
+           width:1400,    // slider standard width
+           height:580,   // slider standard height
+           space:1,
+           layout:'fullwidth',
+           loop:true,
+           preload:0,
+           autoplay:true
+      });
+  </script>
+
+  <script type="text/javascript">     
+     var slider = new MasterSlider();
+   
+      // adds Arrows navigation control to the slider.
+       slider.setup('masterslider-video' , {
+           width:1320,    // slider standard width
+           height:580,   // slider standard height
+           space:1,
+           preload:0,
+           autoplay:true,
+           grabCursor: false
+      });
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74734026-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+
+</html>

@@ -1,0 +1,2 @@
+[15-Jan-2016 19:33:01 UTC] PHP Fatal error:  Cannot use object of type PDOStatement as array in /home/cavealix/public_html/beta/search/index.php on line 13
+[15-Jan-2016 19:42:25 UTC] PHP Fatal error:  Cannot use [] for reading in /home/cavealix/public_html/beta/search/search.html.php on line 21
