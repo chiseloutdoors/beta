@@ -25,6 +25,7 @@ h3 {
 }
 .mini_section{
 	height: 150px;
+	width: 100%;
 }
 .slide {
   display: none;
@@ -94,7 +95,7 @@ h3 {
 	left: 0;
 	background-color: #333;
 	margin: 0 auto;
-	z-index: 1;
+	z-index: 2;
 	font-family: Raleway, 600;
 	opacity: 0.85;
 }
@@ -170,7 +171,18 @@ h3 {
 #quickInfo{
 	margin-left: 60px;
 }
+#trailInfo h4{
+	text-decoration: underline;
+}
 /* End Trail Info */
+
+.map-icon-label .map-icon{
+	font-size: 24px;
+	color: #FFFFFF;
+	line-height: 48px;
+	text-align: center;
+	white-space: nowrap;
+}
 
 
 /* MAP SLIDER */
@@ -179,6 +191,11 @@ h3 {
 }
 #map_headline {
 	font-size: 50px;
+}
+#map_slide {
+	background: url(http://chiseloutdoors.com/beta/img/map.jpg);
+	color: black;
+	text-align: center;
 }
 /* End Prep Map */
 
@@ -236,27 +253,27 @@ h3 {
 
 /* GEAR SLIDES */
 #clothes-slide {
-	background-image: url(../img/highlight_photos/Models.jpg);
+	background-image: url(http://chiseloutdoors.com/beta/img/recommendations/apparel/light_attire.jpg);
 	background-size: cover;
 }
 #pack-slide {
-	background-image: url(../img/Thinkstock/ThinkstockPhotos-479765440.jpg);
+	background-image: url(http://chiseloutdoors.com/beta/img/recommendations/table.jpg);
 	background-size: cover;
 }
 #sleep-slide {
-	background-image: url(../img/Thinkstock/ThinkstockPhotos-473422218.jpg);
+	background-image: url(http://chiseloutdoors.com/beta/img/recommendations/table.jpg);
 	background-size: cover;
 }
-#food-slide {
-	background-image: url(../img/Thinkstock/ThinkstockPhotos-486106706.jpg);
+#provisions-slide {
+	background-image: url(http://chiseloutdoors.com/beta/img/recommendations/table.jpg);
 	background-size: cover;
 }
 #safety-slide {
-	background-image: url(../img/Thinkstock/ThinkstockPhotos-473422218.jpg);
+	background-image: url(http://chiseloutdoors.com/beta/img/recommendations/safety/piggy_back.jpg);
 	background-size: cover;
 }
 #play-slide {
-	background-image: url(../img/Thinkstock/ThinkstockPhotos-481328894.jpg);
+	background-image: url(http://chiseloutdoors.com/beta/img/recommendations/play/climb_gear.jpg);
 	background-size: cover;
 }
 /* End GEAR Slider */

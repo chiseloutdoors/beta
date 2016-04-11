@@ -24,6 +24,8 @@
 
   <!-- Javascript -->
   <script src="trail.js"></script>
+  <!-- Google JS API -->
+  <script src="https://www.google.com/jsapi"></script>
 
   <!-- Base MasterSlider style sheet -->
   <link rel="stylesheet" href="http://chiseloutdoors.com/beta/masterslider/style/masterslider.css" />
@@ -40,8 +42,6 @@
   <!-- Fonts -->
   <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 	
-
-	
 </head>
 <body>
 
@@ -54,9 +54,9 @@
 			</ul>
 			<a class="navbar-brand navbar-center" id="trail_name" href="" style="margin-left:50px;"></a>
 			<ul class="nav navbar-nav navbar-right">
-				<!-- <a class="navbar-brand" href="/register">Sign Up</a>
-				<a class="navbar-brand" href="/login">Login</a> -->
-			</ul>
+        <a class="navbar-brand" href="http://chiseloutdoors.com">Sign Up</a>
+        <!-- <a class="navbar-brand" href="/login">Login</a> -->
+      </ul>
 		</div>
 	</div>
 	<!--End Site Navigation-->
@@ -144,8 +144,8 @@
 			<li>|</li>
 			<span title="Toggle photos"><li><img class="photos-btn" alt="photos-icon" src="http://chiseloutdoors.com/beta/img/flaticon/png/photo147.png"></span></li>
 			<li>|</li>
-			<!-- <span title="Toggle Distance Calc"><li><img class="distance-btn" alt="distance-icon" src="http://chiseloutdoors.com/beta/img/flaticon/png/map4.png"></li></span>
-			<li>|</li> -->
+      <span title="Toggle Eleveation Chart"><li><a href="#elevation_div" data-toggle="collapse"><img class="elevation-btn" alt="distance-icon" src="http://chiseloutdoors.com/beta/img/icons/google/chart.png"></a></li></span>
+      <li>|</li>
 			<span title="Forecast"><li><img class="forecast-btn" alt="forecast-icon" src="http://chiseloutdoors.com/beta/img/flaticon/png/cloud310.png"></li></span>
 			<li>|</li>
 			<!-- Incorporate at later time....
@@ -156,12 +156,17 @@
 	</div>
 	<!--End Trail Navigation-->
 	
+  <!-- Elevation Graph -->
+  <div class="mini_section" id="elevation_div" data-toggle="collapse">
+    <div id="elevation_chart"></div>
+  </div>
 
 	<!-- Trail Info -->
 	<div id="trailInfo" class="mini_section">
 		<div class="container-fluid">
 	      <div class="row">
-            <div class="col-md-3 " id="trail_desc">
+            <div class="col-md-3 col-md-offset-1" id="trail_desc">
+              <h4>Trail Info</h4>
               <ul>
                 <li id="distance"></li>
                 <li id="elevation_gain"></li>
@@ -171,19 +176,21 @@
               </ul> 
             </div>
         	  <div class="col-md-2 " id="activities">
+              <h4>Permitted Activities</h4>
             	<ul>
             		<li>Hike</li>
-            		<li>Pets</li>
             	</ul> 
           	</div>
             <div class="col-md-3" id="quickInfo">
+              <h4>Access Info</h4>
               <p>Park off highway</p>
             </div>
-        	  <div class="col-md-3 " id="links">
+        	  <div class="col-md-2 " id="links">
+              <h4>Related Links</h4>
         	  	<ul>
-	        	    <li><a href="http://stateparks.utah.gov/parks/snow-canyon/">Snow Canyon State Park</a></li>
-				        <li><a href="http://stateparks.utah.gov/parks/snow-canyon/park-	fees/">Park Fees</a></li>
-				        <li><a href="http://utahstateparks.reserveamerica.com/camping/snow-canyon-state-park/r/campgroundDetails.do?contractCode=UT&parkId=345781">Reserve Camp/RV</a></li>
+	        	    <li><a href="http://stateparks.utah.gov/parks/snow-canyon/" target="_blank">Snow Canyon State Park</a></li>
+				        <li><a href="http://stateparks.utah.gov/parks/snow-canyon/park-	fees/" target="_blank">Park Fees</a></li>
+				        <li><a href="http://utahstateparks.reserveamerica.com/camping/snow-canyon-state-park/r/campgroundDetails.do?contractCode=UT&parkId=345781" target="_blank">Reserve Camp/RV</a></li>
 				      </ul>
     	      </div>
       	</div>  
@@ -214,7 +221,7 @@
     	<!-- Slide Menu -->
     	<div class="slide_menu" id="map_menu">
     	  <ul>
-    	    <li><a href="" id="place_name"></a></li>
+    	    <li><a href="#" id="place_name" style="text-decoration:none;color:white;">See what's near this trail to help plan your trip.</a></li>
           <li><img id="place_pic" alt="" src=""></li>
           <li id="place_adress"></li>
           <li id="place_phone"></li>
@@ -312,11 +319,11 @@
     	<div class="slide_menu" id="gear_menu">
       		<h3>Shop at...</h3>
       		<ul id="shop_list">
-        		<li id="rei"><a href="rei.com"><img src="http://chiseloutdoors.com/beta/img/partners/rei-logo.png"></a></li>
-		        <li id="ajunky"><a href="activejunky.com"><img src="http://chiseloutdoors.com/beta/img/partners/aj-logo.png"></a></li>
-        		<li id="bcountry"><a href="backcountry.com"><img src="http://chiseloutdoors.com/beta/img/partners/bc-logo.png"></a></li>
-		        <li id="cabelas"><a href="cabelas.com"><img src="http://chiseloutdoors.com/beta/img/partners/cab-logo.png"></a></li>
-        		<li id="bpro"><a href="basspro.com"><img src="http://chiseloutdoors.com/beta/img/partners/bps-logo.png"></a></li>
+        		<li id="rei"><a href="#"><img src="http://chiseloutdoors.com/beta/img/partners/rei-logo.png"></a></li>
+		        <li id="ajunky"><a href="#"><img src="http://chiseloutdoors.com/beta/img/partners/aj-logo.png"></a></li>
+        		<li id="bcountry"><a href="#"><img src="http://chiseloutdoors.com/beta/img/partners/bc-logo.png"></a></li>
+		        <li id="cabelas"><a href="#"><img src="http://chiseloutdoors.com/beta/img/partners/cab-logo.png"></a></li>
+        		<li id="bpro"><a href="#"><img src="http://chiseloutdoors.com/beta/img/partners/bps-logo.png"></a></li>
 	      	</ul>
     	</div>
 
@@ -374,9 +381,23 @@
     	</div>
 
 	    <!-- Food & Water Slide -->
-	    <div class="slide" id="food-slide">
+	    <div class="slide" id="provisions-slide">
 	    	<div class="container">
-	          
+	        <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <ul style="margin-top:50px; font-size:75px; font-style:bold; color:white; list-style-type:none;">
+                  <li>Water</li>
+                  <li style="font-size:25px;">(.5-1 Liters per person)</li>
+                  <li>Snacks</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <img style="inline-block; margin-top:50px;" src="http://chiseloutdoors.com/beta/img/recommendations/provisions/kleen.png" style="margin-top:50px;">
+                <img style="inline-block;" src="http://chiseloutdoors.com/beta/img/recommendations/provisions/bar.png" style="margin-top:50px;">
+              </div>
+            </div>
+          </div>
 	      </div>
 	    </div>
 
@@ -385,9 +406,9 @@
     		<div class="container">
     	    <div class="container-fluid">
             <div class="row">
-              <div class="col-md-9 col-md-offset-2">
-                <ul style="margin-top:150px; font-size:75px; font-style:bold; color:white; list-style-type:none;">
-                  <li>A Hiking Buddy</li>
+              <div class="col-md-5 col-md-offset-3">
+                <ul style="margin-top:200px; font-size:75px; font-style:bold; color:white; list-style-type:none;">
+                  <li style="font-size:50px; font-style:bold; color:white; list-style-type:none; background-color: rgba(51, 51, 51, 0.35);border-radius: 15px; padding: 10px;">A Hiking Buddy</li>
                 </ul>
               </div>
             </div>
@@ -400,14 +421,14 @@
     		<div class="container">
     	    <div class="container-fluid">
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <ul style="margin-top:50px; font-size:75px; font-style:bold; color:white; list-style-type:none;">
                   <li>Binoculars</li>
                   <li>Camera</li>
                 </ul>
               </div>
               <div class="col-md-6">
-                <img src="" style="margin-top:50px;">
+                <img src="http://chiseloutdoors.com/beta/img/recommendations/play/binoculars.png" style="margin-top:50px;">
               </div>
             </div>
           </div>
@@ -426,7 +447,7 @@
 			<li>|</li>
 			<span title="Sleep"><li><img class="sleep-btn" alt="sleep-icon" src="http://chiseloutdoors.com/beta/img/flaticon/png/sleeping.png"></span>
 			<li>|</li>
-			<span title="Food/Water"><li><img class="foodWater-btn" alt="provisions-icon" src="http://chiseloutdoors.com/beta/img/flaticon/png/plate17.png"></span>
+			<span title="Food/Water"><li><img class="provisions-btn" alt="provisions-icon" src="http://chiseloutdoors.com/beta/img/flaticon/png/plate17.png"></span>
 			<li>|</li>
 			<span title="Safety"><li><img class="safety-btn" alt="safety-icon" src="http://chiseloutdoors.com/beta/img/flaticon/png/hazard5.png"></span>
 			<li>|</li>
@@ -537,7 +558,7 @@
           
           <a href="http://chiseloutdoors.com/beta/trails/white_rocks/">
             <h3 class="ms-layer hps-title1" id="new_5_name" style="color: white; left: 1000px; top: 50px;" data-type="text" data-duration="1400" data-ease="easeOutExpo" data-effect="rotate3dtop(90,0,0,80)">
-            White Rocks Trail in Snow Canyon SP
+            White Rocks
             </h3>
          
             <h3 class="ms-layer hps-title2" id="new_5_city" style="color: white; left: 1000px;top: 84px;" data-type="text" data-duration="1800" data-delay="140" data-ease="easeOutExpo" data-effect="bottom(40)">
@@ -558,14 +579,19 @@
 	<!--Footer-->
   <div id="footer" class="footer">
       <ul>
-          <li>Send us feedback good, bad, or otherwise at chiseloutdoorstemp@gmail.com</li>
+          <li>Sign up for updates and to get access to our feedback forum to help make Chisel Outdoors better than we could ever make it on our own.</li>
       </ul>
-      <h3>&copy; 2015 Chisel</h3>
+      <h3 style="margin-right:25">&copy; 2015 Chisel</h3>
   </div>
   <!--End Footer-->
 
 
 </body>
+
+  <script type="text/javascript">
+    // Load the Visualization API and the columnchart package.
+    google.load('visualization', '1', {packages: ['columnchart']});
+  </script>
 
   <!-- Set Trail Map -->
   <script type="text/javascript">

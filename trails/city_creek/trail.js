@@ -1,5 +1,5 @@
 /*VARIABLES*/
-var trailhead = {lat: 37.24653, lng: -113.62816};
+var trailhead = {lat: 37.13479, lng: -113.59747};
 var placeType = ''; /*search keywords for radar search*/
 var names = ''; //place names for radar search
 var mapContainer = ''; /*where to place map in html*/
@@ -297,12 +297,12 @@ var main = function() {
     });
     
     /* Provisions */
-    $('.foodWater-btn').click(function(){
+    $('.provisions-btn').click(function(){
        var currentSlide = $('.active-slide-gear');
-       var nextSlide = $('#foodWater-slide');
+       var nextSlide = $('#provisions-slide');
 
        var currentBtn = $('.active-btn');
-       var nextBtn = $('.foodWater-btn');
+       var nextBtn = $('.provisions-btn');
        
        currentSlide.fadeOut(600).removeClass('active-slide-gear');
        nextSlide.fadeIn(600).addClass('active-slide-gear');
@@ -394,15 +394,10 @@ var main = function() {
 
 // SET TRAIL MAP
 function initMap() {
-      
-  var map = new google.maps.Map(document.getElementById('trail_map_canvas'), {
-    center: trailhead,
-    zoom: 15
-  });
 
   //Load Trail Data
   var xmlhttp = new XMLHttpRequest();
-  var url = "cinder_cone.json";
+  var url = "trail.json";
   xmlhttp.onreadystatechange=function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
       myFunction(xmlhttp.responseText);
@@ -410,18 +405,45 @@ function initMap() {
   }
   xmlhttp.open("GET", url, true);
   xmlhttp.send();
+      
+  //Create Map
+  var map = new google.maps.Map(document.getElementById('trail_map_canvas'), {
+    center: trailhead,
+    zoom: 16,
+    mapTypeId: google.maps.MapTypeId.SATELLITE,
+    heading: 90,
+    tilt: 45
+  });
 
   //Parse and set marker and methods for each trail 
   function myFunction(response) {
     var arr = JSON.parse(response);
+    
     //Set Photo Spheres
-    for (var i = 0; i < arr.spheres.length; i++) {
-      setSphere(arr.spheres[i]);
-    }
-    //Set Cairns
-    for (var i = 0; i < arr.cairns.length; i++) {
-      setCairn(arr.cairns[i]);
-    }
+    arr.spheres.forEach(setSphere);
+
+    //Set POIs
+    arr.pois.forEach(setPoi);
+
+    // Create an ElevationService.
+    var elevator = new google.maps.ElevationService;
+    // Draw the path, using the Visualization API and the Elevation service.
+    displayPathElevation(arr.cairns[0], elevator, map);
+
+    // If trail splits, show divergence
+    if (arr.cairns.length == 2) {
+      //Set Trail
+      var path = new google.maps.Polyline({
+      path: arr.cairns[1],
+      geodesic: true,
+      strokeColor: 'orange',
+      strokeOpacity: 1.0,
+      strokeWeight: 3
+      });
+  
+      path.setMap(map);
+    };
+
     //Set Trail Info
     document.getElementById('trail_name').innerHTML = arr.trail.name;
     document.getElementById('distance').innerHTML = "Distance: " + arr.trail.distance;
@@ -431,12 +453,71 @@ function initMap() {
     document.getElementById('city').innerHTML = "Near: " + arr.trail.city + "," + arr.trail.state;
   };
 
+  function setPoi(poi){
+    var marker = new google.maps.Marker({
+      position: poi.coord,
+      icon: {
+        title: poi.desc,
+        url: poi.img
+      },
+      map: map,
+    });
+  };
+
+  function displayPathElevation(path, elevator, map) {
+    // Display a polyline of the elevation path.
+    new google.maps.Polyline({
+      path: path,
+      strokeColor: 'orange',
+      opacity: 1,
+      strokeWeight: 3,
+      map: map
+    });
+    // Create a PathElevationRequest object using this array.
+    // Ask for 256 samples along that path.
+    // Initiate the path request.
+    elevator.getElevationAlongPath({
+      'path': path,
+      'samples': path.length
+    }, plotElevation);
+  };
+
+  // Takes an array of ElevationResult objects, draws the path on the map
+  // and plots the elevation profile on a Visualization API ColumnChart.
+  function plotElevation(elevations, status) {
+    var chartDiv = document.getElementById('elevation_chart');
+    if (status !== google.maps.ElevationStatus.OK) {
+      // Show the error code inside the chartDiv.
+      chartDiv.innerHTML = 'Cannot show elevation: request failed because ' +
+          status;
+      return;
+    }
+    // Create a new chart in the elevation_chart DIV.
+    var chart = new google.visualization.LineChart(chartDiv);
+    // Extract the data from which to populate the chart.
+    // Because the samples are equidistant, the 'Sample'
+    // column here does double duty as distance along the
+    // X axis.
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Sample');
+    data.addColumn('number', 'Elevation');
+    for (var i = 0; i < elevations.length; i++) {
+      data.addRow(['', elevations[i].elevation]);
+    }
+    // Draw the chart using the data within its DIV.
+    chart.draw(data, {
+      height: 150,
+      legend: 'none',
+      titleY: 'Elevation (m)'
+    });
+  };
+
   //Set Photo Spheres
-  function setSphere(place) {
+  function setSphere(sphere) {
         var marker = new google.maps.Marker({
           map: map,
-          position: place.coord,
-          url: place.sphere
+          position: sphere.coord,
+          url: sphere.sphere
         });
       
         //Show Pano on click
@@ -445,35 +526,6 @@ function initMap() {
         document.getElementById('photo_sphere').src = marker.url;
       });
     };
-  
-  function setCairn(cairn){
-    //Set marker
-    var marker = new google.maps.Marker({
-      position: {lat: cairn.lat, lng: cairn.lon},
-      map: map,
-      title: cairn.elevation,
-      icon: {
-            url: 'http://chiseloutdoors.com/beta/img/brand/cairn_grey.png',
-            anchor: new google.maps.Point(20, 20),
-            scaledSize: new google.maps.Size(15, 24)
-          }
-    });
-  };
-
-
-    //Using KML Layer
-  /*var ctaLayer = new google.maps.KmlLayer({
-    url: 'http://chiseloutdoors.com/beta/trails/cinder_cone/cinder_cone.kml',
-    map: map
-  });
-
-  map.data.setStyle({
-    icon: {
-            url: 'http://maps.gstatic.com/mapfiles/circle.png',
-            anchor: new google.maps.Point(10, 10),
-            scaledSize: new google.maps.Size(10, 17)
-          }
-  });*/
 }
 
 
@@ -492,8 +544,6 @@ function setMap() {
     title: 'Trail Head'
   });
 
-
-
   //Handle click event for results
   google.maps.event.addListener(marker, 'click', function() {
     service.getDetails(place, function(result, status) {
@@ -510,6 +560,9 @@ function setMap() {
 // TEXT SEARCH
 function textSearch(trailhead, searchText, mapContainer, place_type) {
   
+  //Clear previous slection
+  clearPrepMenu();
+
   // Place Trailhead
   var map = new google.maps.Map(document.getElementById(mapContainer), {
       center: trailhead,
@@ -534,7 +587,7 @@ function textSearch(trailhead, searchText, mapContainer, place_type) {
   var service = new google.maps.places.PlacesService(map);
 
   // Set Sponsored Marker
-  service.getDetails({placeId: place_type}, 
+  /*service.getDetails({placeId: place_type}, 
     function(place, status) {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
         var marker = new google.maps.Marker({
@@ -556,7 +609,7 @@ function textSearch(trailhead, searchText, mapContainer, place_type) {
         document.getElementById('place_hours').innerHTML = place.openinghours.open_now;
       }
     }
-  );
+  );*/
 
 
   service.textSearch(request, callback);
@@ -596,7 +649,7 @@ function textSearch(trailhead, searchText, mapContainer, place_type) {
           document.getElementById('place_adress').innerHTML = "Address<br>" + result.formatted_address;
           document.getElementById('place_phone').innerHTML = "Phone<br>" + result.formatted_phone_number;
           document.getElementById('place_rating').innerHTML = "Rating of 5<br>" + result.rating;
-          document.getElementById('place_web').href = result.url;
+          document.getElementById('place_name').href = result.url;
           document.getElementById('place_hours').innerHTML = result.openinghours.open_now;
         });
     });
@@ -615,10 +668,12 @@ function textSearch(trailhead, searchText, mapContainer, place_type) {
   }
 };
 
-
 // RADAR SEARCH
 function radarSearch(trailhead, placeType, mapContainer){
   /*Create map search for "placeType" around trailhead*/
+    //Clear previous slection
+    clearPrepMenu();
+
     var myOptions = {
         zoom: 10,
         center: trailhead,
@@ -707,8 +762,17 @@ function radarSearch(trailhead, placeType, mapContainer){
             });
         });
       }
+};
 
-
+// Clear Prep Menu
+function clearPrepMenu(){
+  document.getElementById('place_name').innerHTML = "";
+  //document.getElementById('place_pic').src = result.icon;
+  document.getElementById('place_adress').innerHTML = "";
+  document.getElementById('place_phone').innerHTML = "";
+  document.getElementById('place_rating').innerHTML = "";
+  document.getElementById('place_name').href = "";
+  document.getElementById('place_hours').innerHTML = "";
 };
 
 //Function To Display Popup
