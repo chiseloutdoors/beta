@@ -36,23 +36,49 @@
 	font-size: 150px;
 }
 
-#instagram {
-	margin: 50px 0px 50px 0px;
-	text-align: center;
-}
-
 /* Instagram Feed */
-#instagram {
-
+#insta_feed{
+  color: #333333;
+  height: 200px;
+  width: cover;
+  text-align: center;
+  margin-top: -30px;
 }
-#instagram img {
+#insta_feed img {
   height: 50px;
 }
 
+.section-header{
+	text-align: center;
+	margin-bottom: 20px;
+	color: #ff6600;
+	font-size: 5vw;
+}
+
+#members{
+	height: 500px;
+}
+.ms-info{
+	text-align: center;
+}
 
 .ms-slide iframe{
   width: 760px;
   height: 400px;
+}
+
+.social-bin{
+	margin-left: -40px;
+}
+.social-bin li{
+	list-style-image: none;
+	display: inline-block;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.social-bin img{
+	height: 50px;
+	width: 50px;
 }
 
 

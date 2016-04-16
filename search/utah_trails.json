@@ -14,9 +14,6 @@
   	{"trail_id":3,"trailhead":{"lat":37.21949,"lng":-113.63804},"trail_name":"Gila to Lava Flow & White Rocks - 1.5 miles",
   	"page":"http://chiseloutdoors.com/beta/trails/gila/"},
 
-  	{"trail_id":4,"trailhead":{"lat":37.22001,"lng":-113.64933},"trail_name":"Lava Flow - .9 miles",
-  	"page":"http://chiseloutdoors.com/beta/trails/lava_flow/"},
-
   	{"trail_id":5,"trailhead":{"lat":37.11888,"lng":-113.58288},"trail_name":"Owen's Loop - 1.4 miles",
   	"page":"http://chiseloutdoors.com/beta/trails/owens_loop/"},
 
@@ -24,8 +21,41 @@
   	"page":"http://chiseloutdoors.com/beta/trails/pioneer_hills/"},
 
   	{"trail_id":7,"trailhead":{"lat":37.13749,"lng":-113.56435},"trail_name":"T-Bone - 1.9 miles",
-  	"page":"http://chiseloutdoors.com/beta/trails/t_bone/"},
+  	"page":"http://chiseloutdoors.com/beta/trails/t-bone/"},
 
   	{"trail_id":8,"trailhead":{"lat":37.23767,"lng":-113.63649},"trail_name":"White Rocks to Stadium - .7 miles",
-  	"page":"http://chiseloutdoors.com/beta/trails/white_rocks/"}
+  	"page":"http://chiseloutdoors.com/beta/trails/white_rocks/"},
+
+    {"trail_id":9,"trailhead":{"lat":37.146304,"lng":-113.611232},"trail_name":"Beck Hill - 1.5 miles",
+    "page":"http://chiseloutdoors.com/beta/trails/beck_hill/"},
+
+    {"trail_id":10,"trailhead":{"lat":37.138326,"lng":-113.604672},"trail_name":"Chuckwalla - .9 miles",
+    "page":"http://chiseloutdoors.com/beta/trails/chuckwalla/"},
+
+    {"trail_id":11,"trailhead":{"lat":37.279047,"lng":-113.654361},"trail_name":"Snow Canyon Overlook - 2.3 miles",
+    "page":"http://chiseloutdoors.com/beta/trails/snow_canyon_overlook/"},
+
+    {"trail_id":12,"trailhead":{"lat":37.146300,"lng":-113.611236},"trail_name":"Turtle Wall - 1.1 miles",
+    "page":"http://chiseloutdoors.com/beta/trails/turtle_wall/"},
+
+    {"trail_id":13,"trailhead":{"lat":37.138,"lng":-113.298},"trail_name":"Frog Hollow - .6 miles",
+    "page":"http://chiseloutdoors.com/beta/trails/frog_hollow/"},
+
+    {"trail_id":14,"trailhead":{"lat":37.17065,"lng":-113.33239},"trail_name":"Hurricane Hill - .8 miles",
+    "page":"http://chiseloutdoors.com/beta/trails/hurricane_hill/"},
+
+    {"trail_id":15,"trailhead":{"lat":37.13776,"lng":-113.29963},"trail_name":"Mollys Nipple - .8 miles",
+    "page":"http://chiseloutdoors.com/beta/trails/mollys_nipple/"},
+
+    {"trail_id":16,"trailhead":{"lat":37.15339,"lng":-113.60607},"trail_name":"Black Rocks - .5 miles",
+    "page":"http://chiseloutdoors.com/beta/trails/black_rocks/"},
+
+    {"trail_id":17,"trailhead":{"lat":37.12986,"lng":-113.48539},"trail_name":"Cottonwood Wash - 2.7 miles",
+    "page":"http://chiseloutdoors.com/beta/trails/cottonwood_wash/"},
+
+    {"trail_id":18,"trailhead":{"lat":37.1202,"lng":-113.5919},"trail_name":"North Bluff Wall - .7 miles",
+    "page":"http://chiseloutdoors.com/beta/trails/north_bluff_wall/"},
+
+    {"trail_id":19,"trailhead":{"lat":37.102762,"lng":-113.595757},"trail_name":"Temple Quarry - 1.7 miles",
+    "page":"http://chiseloutdoors.com/beta/trails/temple_quarry/"}
   	]}

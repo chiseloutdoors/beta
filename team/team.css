@@ -1,0 +1,89 @@
+@charset "UTF-8";
+.jumbotron {
+	color: #FFFFFF;
+	background-size: 100% auto;
+}
+#team {
+	background-image: url(run.jpg);
+	background-size: 100% 100%;
+}
+
+.group {
+	margin-bottom: 50px;
+}
+
+#form {
+	background-color: #FD951F;
+}
+.btn-secondary {
+}
+.navbar{position: fixed;
+	width: 100%;
+	background-color: #333;
+	margin: 0 auto;
+	z-index: 1;
+	font-family: Raleway, 600;
+	opacity: 0.85;
+}#chisel {
+	color: #FFFFFF;
+}
+#nav-menu {
+	color: #FFFFFF;
+}
+#nav-menu li a{
+	color: #FFFFFF;	
+}#sign-up {
+	color: #FFFFFF;
+}
+.social-bin{
+	margin-left: -40px;
+}
+.social-bin li{
+	list-style-image: none;
+	display: inline-block;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.social-bin img{
+	width:50px;
+	align-content:center;
+}
+.jumbotron{
+	height: 40vw;
+	min-height: 250px;
+	color: white;
+}
+.jumbotron h1{
+	margin-top:10vw;
+}
+
+.section-header{
+	text-align: center;
+	margin-bottom: 20px;
+	color: #ff6600;
+}
+
+/* Footer */
+#footer {
+	background-color: #333;
+	height: 100px;
+	color: white;
+  	text-align: center;
+}
+#footer h3 {
+	font-family: Raleway, 400;
+	color: rgba(128,128,128,1);
+	text-align: right;
+	font-size: 0.5em;
+	padding: 0.25em;
+	margin: 0 auto;
+}
+#footer li {
+  display: inline-block;
+  padding: 20px 15px;
+}
+#footer a {
+  color: white;
+  font-style: none;
+}
+/* End Footer */

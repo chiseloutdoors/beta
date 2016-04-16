@@ -7,10 +7,18 @@ var main = function() {
 }
 
 function initMap() {
+  //ensure proper direction text size
+  $("#hover").each( function () {
+    var $this = $(this);
+    if (parseInt($this.css("fontSize")) < 12) {
+        $this.css({ "font-size": "12px" });   
+    }
+  });
+
   //Set US map
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat:37.1892273,lng:-113.2929227},
-    zoom: 10,
+    center: {lat:37.1892273,lng:-113.293},
+    zoom: 11,
     disableDefaultUI:false
   });
 

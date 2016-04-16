@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="../img/brand/cairn_grey.png"/>
+    <link rel="shortcut icon" type="image/png" href="http://chiseloutdoors.com/beta/img/brand/cairn_grey.png"/>
 
     <!-- Link to CSS -->
     <link rel="stylesheet" type="text/css" href="search.css"/>
@@ -14,12 +14,12 @@
     <script src="search.js"></script>
   
     <!-- Bootstrap -->
-    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../bower_components/bootstrap/js/transition.js"></script>
-    <script src="../bower_components/bootstrap/js/collapse.js"></script>
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="../js/d3.v3.min.js"></script>
+    <link href="http://chiseloutdoors.com/beta/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="http://chiseloutdoors.com/beta/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="http://chiseloutdoors.com/beta/bower_components/bootstrap/js/transition.js"></script>
+    <script src="http://chiseloutdoors.com/beta/bower_components/bootstrap/js/collapse.js"></script>
+    <script src="http://chiseloutdoors.com/beta/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="http://chiseloutdoors.com/beta/js/d3.v3.min.js"></script>
 
     <!-- Base MasterSlider style sheet -->
     <!-- <link rel="stylesheet" href="masterslider/style/masterslider.css" />
@@ -33,18 +33,29 @@
   </head>
 
   <body>
-    <!--Site Navigation-->
-    <div id="nav">
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <img class="glyphicon pull-left" src="http://chiseloutdoors.com/beta/img/brand/cairn_white.png" >
-          <a class="navbar-brand" href="http://www.chiseloutdoors.com/beta">Chisel</a>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-        </ul>
-      </div>
+    <!-- Site Header -->
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background:rgba(51, 51, 51, 0.85);">
+  <div class="navbar-background">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <img class="glyphicon pull-left" src="http://chiseloutdoors.com/beta/img/brand/cairn_white.png" style="width:50px; height:50px; margin-left:20px;">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+        <span class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://chiseloutdoors.com/beta/" style="color:#fff;">Chisel</a>
+      <h2 class="navbar-text" id="hover" style="color:white; margin-left:20vw; font-size:2.5vw;"> Hover pins for info, click to go to trail</h2>
     </div>
-    <!--End Site Navigation-->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav"></ul>
+      <ul class="nav navbar-nav navbar-right" style="margin-right:20px;">
+        <a class="navbar-brand" href="http://chiseloutdoors.com">Sign Up</a>
+        <!-- <a class="navbar-brand" href="/login">Login</a> -->
+      </ul>
+    </div>
+  </div>
+  </nav>
+  <!-- End Site Header -->
 
     <!-- Pop In Menu -->
     <div class="menu">
@@ -69,9 +80,9 @@
   <!--Footer-->
   <div id="footer" class="footer">
       <ul>
-          <li>Send us feedback good, bad, or otherwise at chiseloutdoorstemp@gmail.com</li>
+          <li>Sign up for updates and to get access to our feedback forum to help make Chisel Outdoors better than we could ever make it on our own.</li>
       </ul>
-      <h3>&copy; 2015 Chisel</h3>
+      <h3 style="margin-right:25">&copy; 2015 Chisel</h3>
   </div>
   <!--End Footer-->
 
@@ -85,17 +96,16 @@
     </script>
   </body>
 
+  <!-- Google Analytics -->
  <script>
-    /*var slider = new MasterSlider();
-    slider.setup('masterslider' , {
-            width:250,    // slider standard width
-            height:150,   // slider standard height
-            space:5,
-            loop: true,
-            autoplay: true
-        });
-    // adds Arrows navigation control to the slider.
-    slider.control('arrows');
-  </script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74734026-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
 </html>
